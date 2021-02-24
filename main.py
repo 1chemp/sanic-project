@@ -2,6 +2,9 @@ import asyncio
 import json as js
 import sys
 
+# Для тестов на время
+import timeit
+
 from sanic import Sanic
 from sanic.response import json
 

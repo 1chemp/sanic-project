@@ -1,7 +1,7 @@
 import aiopg
 # import asyncio
 
-dsn = 'dbname=aquapricedb user=postgres password=53bapisi1 host=127.0.0.1'
+dsn = 'dbname=aquapricedb user=postgres password=your_password host=127.0.0.1'
 
 
 async def test_select():
