@@ -1,7 +1,7 @@
 import aiopg
 # import asyncio
 
-dsn = 'dbname=aquapricedb user=postgres password=your_password host=127.0.0.1'
+dsn = 'dbname=project user=project password=postgres host=127.0.0.1'
 
 
 async def test_select():
@@ -19,9 +19,9 @@ async def test_select():
 
 
 async def go():
-    conn = await aiopg.connect(database='aquapricedb',
-                               user='postgres',
-                               password='53bapisi1',
+    conn = await aiopg.connect(database='project',
+                               user='project',
+                               password='postgres',
                                host='127.0.0.1')
     cur = await conn.cursor()
     await cur.execute("SELECT * FROM newss")

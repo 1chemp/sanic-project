@@ -8,6 +8,10 @@ import timeit
 from sanic import Sanic
 from sanic.response import json
 
+from sanic.response import text
+from sanic_cors import CORS
+
+
 from for_db import get_data_products, get_data_news, \
     add_new_contacts, add_new_orders, test_select
 
@@ -15,6 +19,7 @@ if sys.version_info[0] == 3 and sys.version_info[1] >= 8 and sys.platform.starts
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 app = Sanic(__name__)
+CORS(app)
 
 
 @app.route('/hi')
@@ -54,4 +59,4 @@ async def insert_and_get_data_from_orders(request):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=5007)

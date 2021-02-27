@@ -1,0 +1,13 @@
+version: '3'
+services:
+  flask:
+    build: .
+    environment:
+    - FLASK_APP=app.py
+    command: >
+        bash -c "uwsgi --socket 0.0.0.0:5007 --protocol=http -w main:app"
+    ports:
+    - "5007:5007"
+    volumes:
+    - /home/maslov/sanic-project:/app
+    
